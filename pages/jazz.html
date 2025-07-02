@@ -1,3 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<!-- jazz.html com paths corrigidos -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acervo de Jazz & Blues - Gitanno Music</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- CABEÇALHO COM CORES ORIGINAIS -->
+  <header>
+    <h1>Gitanno Music</h1>
+  </header>
+
+  <!-- MENU DE NAVEGAÇÃO -->
+  <nav>
+    <div class="nav-links">
+      <a href="../index.html">Início</a>
+      <a href="mpb.html">MPB</a>
+      <a href="rock.html">Rock</a>
+      <a href="jazz.html" class="active">Jazz & Blues</a>
+    </div>
+    <h2 class="section-title">Acervo de Jazz & Blues</h2>
+  </nav>
+
+  <!-- LISTA DE MÚSICAS COM CAMINHO CORRETO -->
+  <main>
+    <div class="song-grid">
+      <!-- Música 1 - GERALD ALBRIGHT -->
+      <div class="song-card" data-song="gerald-albright_georgia-on-my-mind" data-url="../audios/gerald-albright_georgia-on-my-mind.mp3">
+        <h3>Georgia On My Mind</h3>
+        <p class="artist">Gerald Albright</p>
+        <div class="song-actions">
+          <button class="play-btn" onclick="playSong('gerald-albright_georgia-on-my-mind')">▶ Ouvir</button>
+          <button class="copy-link-btn" onclick="copyLink('gerald-albright_georgia-on-my-mind')">🔗 Copiar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PLAYER FIXO (MANTIDO IDÊNTICO) -->
+  <div class="global-player" id="globalPlayer" hidden>
+    <div class="player-info">
+      <h4 id="nowPlaying">▶ Nenhuma música tocando</h4>
+    </div>
+    <div class="progress-container" onclick="seek(event)" title="Arraste para avançar/voltar">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="time-display">
+      <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+    </div>
+    <div class="player-controls">
+      <button class="player-btn" onclick="skipToStart()" data-tooltip="Voltar ao início">⏮</button>
+      <button class="player-btn" onclick="togglePlay()" id="playPauseBtn" data-tooltip="Play/Pause">⏯</button>
+      <button class="player-btn" onclick="skipToEnd()" data-tooltip="Ir para o final">⏭</button>
+    </div>
+    <audio id="audioPlayer"></audio>
+  </div>
+
+  <script src="../js/player.js"></script>
+</body>
+</html>
